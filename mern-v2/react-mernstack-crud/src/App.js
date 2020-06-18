@@ -6,41 +6,38 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 import CreateStudent from "./components/create-student.component";
 import EditStudent from "./components/edit-student.component";
 import StudentList from "./components/student-list.component";
 
-function App() {
+function Mainpage() {
   return (<Router>
-    <div className="App">
-      <header className="App-header">
+    <div class="app">
+      <header class="app-header">
         <Navbar bg="dark" variant="dark">
           <Container>
-
             <Navbar.Brand>
-              <Link to={"/create-student"} className="nav-link">
+              <Link to="/" class="nav-link">
                 React MERN Stack App
               </Link>
             </Navbar.Brand>
 
-            <Nav className="justify-content-end">
+            <Nav class="justify-content-end">
               <Nav>
-                <Link to={"/create-student"} className="nav-link">
+                <Link to="/create-student" class="nav-link">
                   Create Student
                 </Link>
               </Nav>
 
               {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
+                <Link to={"/edit-student/:id"} class="nav-link">
                   Edit Student
                 </Link>
               </Nav> */}
 
               <Nav>
-                <Link to={"/student-list"} className="nav-link">
+                <Link to="/student-list" class="nav-link">
                   Student List
                 </Link>
               </Nav>
@@ -53,7 +50,7 @@ function App() {
       <Container>
         <Row>
           <Col md={12}>
-            <div className="wrapper">
+            <div class="wrapper">
               <Switch>
                 <Route exact path='/' component={CreateStudent} />
                 <Route path="/create-student" component={CreateStudent} />
@@ -68,4 +65,4 @@ function App() {
   </Router>);
 }
 
-export default App;
+export default Mainpage;
